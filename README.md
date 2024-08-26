@@ -1,6 +1,5 @@
 # Snake-Game
 
-![Snake Game Screenshot](https://github.com/Uyadsb/Snake-Game/blob/main/Pics%20of%20Game/Screenshot_2.png)
 
 A classic Snake Game built with Python using the Pygame library. Control the snake to eat the fruit, grow longer, and avoid running into walls or yourself!
 
@@ -80,3 +79,7 @@ To run this game on your local machine, follow these steps:
 ## Contact
 
 For any inquiries or suggestions, feel free to reach out to me via GitHub.
+
+
+##
+![Snake Game Screenshot](https://github.com/Uyadsb/Snake-Game/blob/main/Pics%20of%20Game/Screenshot_2.png)
