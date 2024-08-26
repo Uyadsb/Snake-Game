@@ -24,9 +24,9 @@ A classic Snake Game built with Python using the Pygame library. Control the sna
 - Easy to customize
 
 ## Requirements
-
-• Python 3.x
-• Pygame library
+  
+  • Python 3.x
+  • Pygame library
 
 
 ## Installation
@@ -39,10 +39,7 @@ To run this game on your local machine, follow these steps:
   2. **Go to file**
      ```
      cd Snake-Game
-  3. **Install the required dependencies: Ensure you have Python and Pygame installed**
-      ```
-      pip install pygame
-  4.  **Run game**
+  3.  **Run game**
       ```
       python3 main.py
 
@@ -59,10 +56,10 @@ To run this game on your local machine, follow these steps:
 
 ## How to Play
 
-°  Movement: Use the arrow keys to control the direction of the snake.
-°  Objective: The goal is to eat the fruit that appears on the screen. Each time the snake eats the fruit, it grows longer, and the score increases.
-°  Game Over: The game ends if the snake runs into the wall or into itself.
-
+  °  Movement: Use the arrow keys to control the direction of the snake.
+  °  Objective: The goal is to eat the fruit that appears on the screen. Each time the snake eats the fruit, it grows longer, and the score increases.
+  °  Game Over: The game ends if the snake runs into the wall or into itself.
+  
 
 ## Screenshots
 
