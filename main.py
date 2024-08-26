@@ -9,6 +9,7 @@ from body import Snake
 from eat import Strawberry
 from button import Button
 from game_stats import GameStats
+from pause import Pause
 
 
 class SnakeGame:
@@ -32,7 +33,8 @@ class SnakeGame:
         self.strawberry = Strawberry(self)
         self.snake = Snake(self)
         self.play_button = Button(self, "Play")
-    
+        
+        self.pause = Pause(self)
     
     def _reset_game(self):
         # Reset game statistics and settings
@@ -90,7 +92,6 @@ class SnakeGame:
             self._check_events()
 
           
-
     def _eat(self):
         if self.snake.rect.colliderect(self.strawberry.rect):
             self.snake.grow()
@@ -112,12 +113,20 @@ class SnakeGame:
                     self.snake.change_direction('RIGHT')
                 elif event.key == pygame.K_RETURN:
                     self._check_play_button()
+                elif event.key == pygame.K_ESCAPE:
+                    sys.exit()
+                elif event.key == pygame.K_p:
+                    self.pause.pause *= -1 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
                 if self._check_button_mouse_pos(mouse_pos) :
                     self._check_play_button()
 
-
+    # pause game 
+    def _pause(self):
+        self.pause.pause_game()
+        
+        
     #redraw the background each loop
     def _update_screen(self):
         self.screen.blit(self.settings.bg_image, (0,0))
@@ -141,10 +150,12 @@ class SnakeGame:
     def _run_game(self):
         while True:
             self._check_events()
-            if self.stats.game_active:
+            if self.stats.game_active and self.pause.pause == -1:
                 self._check_border()
                 self.snake.update(self)
                 self._eat()
+            elif self.stats.game_active and self.pause.pause == 1:
+                self._pause()
                 
             self._update_screen()
             
